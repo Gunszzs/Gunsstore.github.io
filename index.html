@@ -6,6 +6,221 @@
   <title>Guns Services | Home</title>
   <link rel="icon" href="https://afterschoolsncks.de/images/guns.jpg" type="image/x-icon" />
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: rgb(0, 0, 0);
+      font-family: 'JetBrainsMono', sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Vollbild-Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      color: white;
+      font-size: 32px;
+      text-align: center;
+      cursor: pointer;
+      text-shadow: 0px 0px 10px rgb(77, 89, 255), 
+                 0px 0px 20px rgba(77, 80, 255, 0.8), 
+                 0px 0px 30px rgba(77, 95, 255, 0.6);
+    }
+
+    .hidden {
+      display: none;
+    }
+    .Group {
+    display: flex;
+    flex-direction: column; /* Buttons untereinander */
+    justify-content: center; /* Buttons vertikal */
+    align-items: center; 
+    flex-grow: 1; 
+    z-index: 1; /* Vordergrund Inhalt z-index 1 */
+    position: relative; /* z-index */
+}
+
+.Group button {
+    width: 250px; /* Einheitliche Breite */
+    height: 50px; /* Einheitliche Höhe */
+    margin: 5px; /* Abstand zwischen den Buttons */
+    box-sizing: border-box; /* Padding und Border in der Gesamtgröße enthalten */
+    white-space: nowrap; /* Verhindert, dass der Text umbricht */
+    overflow: hidden; /* Verhindert, dass der Text über den Button hinausragt */
+    text-overflow: ellipsis; /* Fügt "..." hinzu, wenn der Text zu lang ist */
+    text-align: center; /* Zentriert den Text horizontal */
+    line-height: 30px; /* Zentriert den Text vertikal bei fixer Höhe */
+}
+
+
+    h1 {
+      font-size: 48px;
+      font-family: 'Comic Sans MS', sans-serif;
+      margin: 200px -10px -15px 0;
+      color: rgb(255, 255, 255);
+      text-shadow: 0 0 10px #1638ce;
+    }
+
+    p {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #4d59ff;
+    }
+
+    hr {
+      width: 575px;
+      border-bottom: 2px solid #4d77ff;
+    }
+
+    button {
+      padding: 10px 50px;
+      font-family: 'Comic Sans MS', sans-serif;
+      background-color: transparent;
+      border: 2px solid #504dff;
+      color: #4d50ff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2805f1;
+      color: #1a001a;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.4);
+      font-family: 'Comic Sans MS', sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      margin-top: auto; 
+      z-index: 2; 
+    }
+
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    footer ul li {
+      margin: 0 10px;
+    }
+
+    .Klaus {
+      font-family: 'Comic Sans MS', sans-serif;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Partikel Container */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; /* Bildschirmbreite */
+      height: 100vh; /* Bildschirmhöhe */
+      z-index: 0; /* Hintergrund */
+    }
+
+    .music-control {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    .music-control button {
+      padding: 10px 20px;
+      font-family: 'Comic Sans MS', sans-serif;
+      background-color: #4d68ff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .music-control button:hover {
+      background-color: #343fd1;
+    }
+
+    .top-info {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+    height: 36px;
+    flex-shrink: 0;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    text-shadow: 0px 0px 10px rgb(0, 2, 104), 
+                 0px 0px 20px rgba(1, 0, 85, 0.89), 
+                 0px 0px 30px rgba(0, 8, 112, 0.6);
+    }
+
+.top-news {
+    width: 100%;
+    font-weight: bold
+    z-index: 1;
+    height: 36px;
+    flex-shrink: 0;
+    color:rgb(255, 250, 250);
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+}
+
+    .no-style-link {
+    text-decoration: none;
+    color: #0206e2;
+  }
+
+  no-style-link:hover {
+      background-color: #1a001a;
+      color: #1a001a;
+    }
+
+    /* BG  Vanta-Globe */
+    #vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0; 
+    }
+
+  </style>
 </head>
 <body>
   <header>Welcome To Guns Services</header>
