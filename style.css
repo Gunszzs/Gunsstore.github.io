@@ -1,105 +1,77 @@
-/* Shared black + blue theme */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #0a0a0a;
-  color: #e0e0e0;
-}
 
+body {
+  background-color: #0a0a0f;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 header {
   background: linear-gradient(90deg, #001f3f, #0074D9);
-  padding: 20px;
+  padding: 1rem;
+  font-size: 2rem;
   text-align: center;
   color: white;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  font-weight: 600;
 }
-
 nav {
   display: flex;
   justify-content: center;
   background-color: #111;
-  padding: 10px 0;
+  padding: 0.5rem;
 }
-
 nav a {
-  color: #00aaff;
+  color: #fff;
+  margin: 0 1rem;
   text-decoration: none;
-  margin: 0 20px;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
 }
-
 nav a:hover {
-  color: #33ccff;
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff;
 }
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #0a0a0a;
-  border-top: 1px solid #222;
-  color: #777;
-}
-
-/* Page specific */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: radial-gradient(circle at top, #001f3f, #000);
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  color: #33ccff;
-}
-
-.products {
+.products, .plans {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: auto;
+  padding: 2rem;
 }
-
 .card {
-  background-color: #111;
-  border: 1px solid #00aaff33;
-  border-radius: 12px;
+  background-color: #111827;
+  border-radius: 15px;
+  padding: 1rem;
   text-align: center;
-  padding: 20px;
-  transition: transform 0.3s, border 0.3s;
+  box-shadow: 0 0 10px #0055ff33;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .card:hover {
   transform: translateY(-5px);
-  border-color: #00aaff;
+  box-shadow: 0 0 20px #00aaff66;
 }
-
 .card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
-
-.card h3 {
-  color: #33ccff;
-  margin: 15px 0 10px;
-}
-
-.card button {
-  background-color: #0074D9;
+button {
+  background-color: #0055ff;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
-
-.card button:hover {
-  background-color: #33ccff;
+button:hover {
+  background-color: #007bff;
+  box-shadow: 0 0 10px #00aaff;
+}
+footer {
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
